@@ -22,7 +22,7 @@ app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
   r.table('videos').orderBy({index: r.desc('createdAt')}).limit(20).run().then(newVideos => {
-    r.table('videos').orderBy({index: 'peers'}).limit(20).run().then(popularVideos => {
+    r.table('videos').orderBy({index: r.asc('peers')}).limit(20).run().then(popularVideos => {
       res.render('index', {popularVideos: popularVideos, newVideos: newVideos})
     })
   })
