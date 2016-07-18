@@ -14,6 +14,7 @@
       env_production : {
         NODE_ENV: "production",
         PORT: 4050,
+        TORRENTS_URL: "https://peertube.btorrent.xyz/videos/",
         DB_HOST: "127.0.0.1"
       },
       env_dev: {
