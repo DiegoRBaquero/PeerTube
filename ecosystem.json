@@ -1,0 +1,68 @@
+{
+  /**
+   * Application configuration section
+   * http://pm2.keymetrics.io/docs/usage/application-declaration/
+   */
+  apps : [
+
+    // First application
+    {
+      name      : "PeerTube",
+      script    : "server.js",
+      env: {
+      },
+      env_production : {
+        NODE_ENV: "production",
+        PORT: 4050,
+        DB_HOST: "127.0.0.1"
+      },
+      env_dev: {
+        NODE_ENV: "development",
+        PORT: 8080,
+        TORRENTS_URL: "http://localhost:8080/videos/",
+        DB_HOST: "198.199.67.12",
+        watch: 'server.js'
+      }
+    },
+    {
+      name      : "PeerTube Updater",
+      script    : "updater.js",
+      env: {
+      },
+      env_production : {
+        NODE_ENV: "production"
+      },
+      env_dev: {
+        NODE_ENV: "development",
+        watch: "updater.js"
+      }
+    }
+    
+  ],
+
+  /**
+   * Deployment section
+   * http://pm2.keymetrics.io/docs/usage/deployment/
+   */
+  deploy : {
+    production : {
+      user : "root",
+      host : "server.diegorbaquero.com",
+      ref  : "origin/master",
+      repo : "git@github.com:DiegoRBaquero/PeerTube.git",
+      path : "/home/diego/peertube",
+      "post-deploy" : "npm install && pm2 startOrReload ecosystem.json --env production"
+    },
+    dev : {
+      user : "node",
+      host : "212.83.163.1",
+      ref  : "origin/master",
+      repo : "git@github.com:repo.git",
+      path : "/var/www/development",
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env dev",
+      env  : {
+        NODE_ENV: "dev"
+      }
+    }
+  }
+}
