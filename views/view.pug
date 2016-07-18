@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    .row(style="padding-top: 20px")
+        .col-md-12
+            .embed-responsive.embed-responsive-16by9
+                if video.image
+                    video#video(style="background-color: #000; background-image: url('" + video.image + "'); background-size: contain; background-repeat: round" controls)
+                else
+                    video#video(style="background-color: #000" controls)
+            h1(style="margin-top: 5px")= video.name
+    
+block scripts
+    script(src="/js/peertube-bundle.js")
+    script.
+        var torrent = !{JSON.stringify(video.torrent)}
+        
+        window.client.add(torrent, (torrent) => {
+            torrent.files[0].renderTo('#video')
+        })

@@ -1,0 +1,22 @@
+{
+  "name": "peertube",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diego Rodríguez Baquero <diegorbaquero@gmail.com> (https://diegorbaquero.com)",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "create-torrent": "^3.24.5",
+    "express": "^4.14.0",
+    "multer": "^1.1.0",
+    "parse-torrent": "^5.8.0",
+    "pug": "^2.0.0-beta3",
+    "request": "^2.73.0",
+    "rethinkdbdash": "^2.3.17",
+    "webtorrent": "^0.95.2"
+  }
+}

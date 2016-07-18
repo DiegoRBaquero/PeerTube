@@ -1,0 +1,5 @@
+.idea
+node_modules
+ecosystem.json
+tmp
+public/videos

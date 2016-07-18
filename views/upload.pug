@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    .row
+        .col-md-6
+            h3.text-center Upload your video
+            form.form-horizontal(method="POST" enctype="multipart/form-data" role="form" action="/video")
+                .form-group
+                    label.col-md-4.control-label(for="name") Name:
+                    .col-md-8
+                        input#name.form-control(type="text" name="name" minlength=6 required)
+                .form-group
+                    label.col-md-4.control-label(for="file") Select your file: 
+                    .col-md-8
+                        input#file.form-control(type="file" name="file")
+                .form-group
+                    .col-md-8.col-md-offset-4
+                        .checkbox
+                            label
+                                input(type='checkbox' required)
+                                |  Not copyrighted
+                .form-group.text-center
+                    button.btn.btn-success(type="submit") Upload
+                    h6 Max 100MB
+        .col-md-6
+            h3.text-center Add existent torrent
+            
+            

@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .row
+        .col-md-4
+            h2 Popular Videos
+            table.table
+                thead
+                    th Name
+                    th Peers
+                tbody
+                each video in popularVideos
+                    tr
+                        td
+                            a(href="view/" + video.infoHash)= video.name
+                        td= video.peers
+        .col-md-4
+            h2 New Videos
+            table.table
+                thead
+                    th Name
+                    th Peers
+                tbody
+                each video in newVideos
+                    tr
+                        td
+                            a(href="view/" + video.infoHash)= video.name
+                        td= video.peers
+        .col-md-4
+            h2 TBD Videos   
