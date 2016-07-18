@@ -13,7 +13,7 @@ block content
                     tr
                         td
                             a(href="view/" + video.infoHash)= video.name
-                        td= Math.min(video.peers, 1)
+                        td= Math.max(video.peers, 1)
         .col-md-4
             h2 New Videos
             table.table
@@ -25,6 +25,6 @@ block content
                     tr
                         td
                             a(href="view/" + video.infoHash)= video.name
-                        td= Math.min(video.peers, 1)
+                        td= Math.max(video.peers, 1)
         .col-md-4
             h2 TBD Videos   
