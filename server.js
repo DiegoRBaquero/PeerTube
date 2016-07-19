@@ -11,7 +11,7 @@ let parseTorrent = require('parse-torrent')
 // Vars
 let app = express()
 let r = require('./db')
-let upload = multer({dest: 'tmp/', limits: {fileSize: 1024 * 1024 * 100}}).single('file')
+let upload = multer({dest: 'tmp/', limits: {fileSize: 1024 * 1024 * 200}}).single('file')
 let lg = console.log
 
 app.enable('trust proxy')
