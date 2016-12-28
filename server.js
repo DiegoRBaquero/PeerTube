@@ -17,7 +17,7 @@ let lg = console.log
 app.enable('trust proxy')
 
 app.set('view engine', 'pug')
-app.use(express.static(__DIRNAME + '/public'))
+app.use(express.static('public/'))
 // app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
