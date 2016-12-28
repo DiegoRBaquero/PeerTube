@@ -52,7 +52,7 @@
       ref  : "origin/master",
       repo : "git@github.com:DiegoRBaquero/PeerTube.git",
       path : "/home/diego/peertube",
-      "post-deploy" : "npm install && pm2 startOrReload ecosystem.json --env production"
+      "post-deploy" : "rm -rf node_modules/ && npm install && pm2 startOrReload ecosystem.json --env production"
     },
     dev : {
       user : "node",

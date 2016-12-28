@@ -1,7 +1,7 @@
 'use strict'
 
 // Modules
-let bodyParser = require('body-parser')
+// let bodyParser = require('body-parser')
 let createTorrent = require('create-torrent')
 let express = require('express')
 let fs = require('fs')
@@ -17,7 +17,7 @@ let lg = console.log
 app.enable('trust proxy')
 
 app.set('view engine', 'pug')
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__DIRNAME + '/public'))
 // app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
@@ -84,7 +84,7 @@ app.post('/video', upload, (req, res) => {
       // It isn't accessible
       lg("doesn't exist")
     }
-    
+
     torrent = parseTorrent.toTorrentFile(parsedTorrent)
 
     fs.mkdir('public/videos/' + parsedTorrent.infoHash, (err) => {
@@ -97,6 +97,6 @@ app.post('/video', upload, (req, res) => {
   })
 })
 
-let server = app.listen(process.env.PORT || 8080, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log('Started')
 })

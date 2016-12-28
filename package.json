@@ -17,6 +17,6 @@
     "pug": "^2.0.0-beta3",
     "request": "^2.73.0",
     "rethinkdbdash": "^2.3.17",
-    "webtorrent": "^0.95.2"
+    "webtorrent": "0.x"
   }
 }
