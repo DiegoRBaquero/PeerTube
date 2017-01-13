@@ -41,7 +41,7 @@ app.get('/view/:infoHash', (req, res) => {
 
 app.post('/video', upload, (req, res) => {
   if (req.file == null) {
-    console.log('No file')
+    lg('No file')
     res.status(400).send('You have to give me a file')
     return
   }
