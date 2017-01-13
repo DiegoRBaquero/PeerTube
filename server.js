@@ -98,5 +98,5 @@ app.post('/video', upload, (req, res) => {
 })
 
 app.listen(process.env.PORT || 8080, () => {
-  console.log('Started')
+  lg('Started')
 })
