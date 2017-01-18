@@ -1,5 +1,7 @@
 # PeerTube
-YouTube Close using WebTorrent
+YouTube Clone using WebTorrent
+
+This project is no longer maintained
 
 ## Requirements
 - RethinkDB
